@@ -75,8 +75,5 @@ function draw() {
     strokeWeight(3);
     triangle(x - 10, y, x + 25, y - 40, x + 60, y); // Triangolo del tetto (coordinate dei vertici)
   }
-
-
-  
 }
 
