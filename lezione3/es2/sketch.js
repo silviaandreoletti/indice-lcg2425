@@ -10,6 +10,7 @@ function setup() {
   slider.size(200); //lunghezza visualizzazione
 }
 function draw() {
+  let sldierVal=slider.value();
   background("navy");
   //con quale frequenza di aggiorna disegno
   frameRate(7); //generale (luna e stelle)
@@ -51,7 +52,7 @@ function draw() {
   let x_casa =0;
   let house_height = 100, house_width=100;
   for(let numero_case=0; numero_case<3; numero_case++){
-    fill("white");
+    fill(sldierVal);
     rect(x_casa, y-house_height , house_width, house_height);
     fill("red");
     let roof_height=80;
@@ -69,17 +70,16 @@ function draw() {
   
   let left_corner = y-house_height;
   let sliderValue = slider.value;
-  /*if(mouseX > x_casa) &&
-  (moouseX < x_casa + house_width)&&
-  (mouseY < left_corner_house) { 
-    fill("navy");
+  if((mouseX > x_casa)&&
+  (mouseX<house_width)&&
+  (mouseY>y-house_height)
+  &&(mouseY<y)){
+    fill(173,216,230);
     rect(x_casa, y-house_height , house_width, house_height);
-  } else {
+  }else{
     fill("white");
-    rect(x_casa, y-house_height , house_width, house_height);
-  } */
-
-
+    rect(x_casa, y-house_height , house_width, house_height); 
+  }
 
   //voglio disegnare stelle random
   let xStar=0;
