@@ -2,7 +2,7 @@ let canvasXMax=400, canvasYMax=400;
 let moonXpos=255;
 let moonYpos=50;
 let phase =50;
-let diametro =100;
+let diametro = 100;
 function setup() {
   createCanvas(canvasXMax, canvasYMax);
 }
@@ -10,8 +10,8 @@ function draw() {
   background("navy");
   //moon
   colorMode(RGB);
-  drawingMonn(moonXpos, moonYpos, diametro, phase);
-  //drawingMonn(50, 100, 100, 5);
+  drawingMoon(moonXpos, moonYpos, diametro, phase);
+  drawingMoon(50, 100, 100, 5);
   stroke(0);//black outline
   strokeWeight(1);//outline thickness
   fill("green");
@@ -42,16 +42,17 @@ function draw() {
   }
 }
 
-function drawingMonn(xMoon, yMoon, dMoon, phase){
-  //codice che ci serve per disegnare luna
+function drawingMoon(xMoon, yMoon, dMoon, phase){
+  //codice che ci serve per disegnare la luna
   push();
   fill(255, 255, 0, 200);
   stroke(255, 255, 255, 100);
   strokeWeight(10); //large outline
   circle(xMoon, yMoon, dMoon);
   //overlappin circle
-  translate(phase, 0);
+  translate(phase,0);
   stroke("navy");
   fill("navy");
-  circle(xMoon, yMoon, dMoon);
+  circle(xMoon, yMoon,dMoon);
+  pop();
 }
